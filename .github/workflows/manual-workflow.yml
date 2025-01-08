@@ -7,6 +7,14 @@ on:
         description: 'Person to greet'
         required: true
         default: 'World'
+      select:
+        description: 'Select a value'
+        type: choice
+        required: true
+        default: 'Option 1'
+        options:
+          - 'Option 1'
+          - 'Option 2'
 
 jobs:
   say_hello:
@@ -14,3 +22,5 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, ${{ github.event.inputs.name }}!"
+      - name: Select
+        run: echo "${{ github.event.inputs.select }}!"
