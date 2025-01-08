@@ -16,9 +16,6 @@ on:
           - 'option1'
           - 'option2'
 
-env:
-  # SELECT_VALUE: "{'option1': 'value1', 'option2': 'value2'}[${{ github.event.inputs.select }}]"
-
 jobs:
   say_hello:
     runs-on: ubuntu-latest
