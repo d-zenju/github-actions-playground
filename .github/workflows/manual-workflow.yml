@@ -13,8 +13,11 @@ on:
         required: true
         default: 'Option 1'
         options:
-          - 'Option 1'
-          - 'Option 2'
+          - 'option1'
+          - 'option2'
+
+env:
+  SELECT_VALUE: ${{ github.event.inputs.select }}
 
 jobs:
   say_hello:
@@ -23,4 +26,4 @@ jobs:
       - name: Say Hello
         run: echo "Hello, ${{ github.event.inputs.name }}!"
       - name: Select
-        run: echo "${{ github.event.inputs.select }}!"
+        run: echo "${{ env.SELECT_VALUE }}!"
