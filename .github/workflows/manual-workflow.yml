@@ -22,5 +22,7 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, ${{ github.event.inputs.name }}!"
-      - name: Select
-        run: echo "${{ fromJSON('{"option1":"value1", "option2":"value2"}')[github.event.inputs.select] }}!"
+      - name: Set SELECT_VALUE
+        run: echo "SELECT_VALUE=${{ fromJSON('{"option1":"value1", "option2":"value2"}')[github.event.inputs.select] }}" >> $GITHUB_ENV
+      - name: Show SELECT_VALUE
+        run: echo $SELECT_VALUE
