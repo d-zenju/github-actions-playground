@@ -25,4 +25,4 @@ jobs:
       - name: Set SELECT_VALUE
         run: echo "SELECT_VALUE=${{ fromJSON('{"option1":"value1", "option2":"value2"}')[github.event.inputs.select] }}" >> $GITHUB_ENV
       - name: Show SELECT_VALUE
-        run: echo $SELECT_VALUE
+        run: echo $SELECT_VALUE, $GITHUB_ENV
